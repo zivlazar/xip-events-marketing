@@ -33,7 +33,8 @@ document.querySelector('#contact-form')?.addEventListener('submit', async (event
   const message = form.querySelector('.form-message');
   const values = Object.fromEntries(new FormData(form));
   const subject = encodeURIComponent(`XIP Events enquiry from ${values.name}`);
-  const body = encodeURIComponent(`Name: ${values.name}\nEmail: ${values.email}\n\n${values.message}`);
+  const phone = values.phone ? `\nPhone: ${values.phone}` : '';
+  const body = encodeURIComponent(`Name: ${values.name}\nEmail: ${values.email}${phone}\n\n${values.message}`);
 
   message.textContent = 'Opening your email app with the enquiry ready to send.';
   window.location.href = `mailto:hello@xipevents.com?subject=${subject}&body=${body}`;
