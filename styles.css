@@ -92,6 +92,7 @@ h2 { font-size: clamp(52px, 8.5vw, 130px); line-height: .9; letter-spacing: -.09
 .problem-grid h2 { margin-bottom: 0; }
 .problem-copy { color: #c9c7bd; font-size: 16px; line-height: 1.7; }
 .problem-copy p:last-child { margin-bottom: 0; }
+.inline-link { display: inline-block; margin-top: 18px; border-bottom: 1px solid currentColor; color: var(--cyan); font-size: 13px; }
 .channel-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 90px; }
 .channel-list span { border: 1px solid rgba(248, 243, 231, .33); padding: 10px 15px; color: #d8d5ca; font: 10px 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .06em; }
 
@@ -102,6 +103,7 @@ h2 { font-size: clamp(52px, 8.5vw, 130px); line-height: .9; letter-spacing: -.09
 .platform-intro h2 { margin: 0; }
 .platform-intro h2 span { color: var(--blue); }
 .platform-intro > p { color: var(--muted); font-size: 16px; line-height: 1.7; margin: 0 0 5px; }
+.platform-intro .inline-link { color: var(--blue); }
 .audience-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
 .audience-card, .signal-card { min-height: 370px; padding: clamp(24px, 3vw, 45px); display: flex; flex-direction: column; position: relative; }
 .audience-card h3, .signal-card h3 { font-size: clamp(29px, 4vw, 58px); letter-spacing: -.08em; line-height: .93; margin: auto 0 20px; }
@@ -131,6 +133,7 @@ h2 { font-size: clamp(52px, 8.5vw, 130px); line-height: .9; letter-spacing: -.09
 .value h2 { margin-bottom: 35px; }
 .value h2 em { color: var(--red); }
 .value-copy { max-width: 430px; color: var(--muted); font-size: 16px; line-height: 1.7; }
+.value .inline-link { color: var(--red); }
 .value-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
 .value-list li { display: grid; grid-template-columns: 45px 1fr; gap: 15px; align-items: start; border-bottom: 1px solid var(--line); padding: 17px 0; font-size: 14px; }
 .value-list li span { color: var(--red); font: 10px 'DM Mono', monospace; padding-top: 4px; }
@@ -143,6 +146,19 @@ h2 { font-size: clamp(52px, 8.5vw, 130px); line-height: .9; letter-spacing: -.09
 .manifesto-card > p span { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; }
 .manifesto-bottom { align-items: end; }
 .manifesto-star { font-size: 28px; }
+
+.faq { background: var(--ink); color: var(--paper); padding-top: clamp(80px, 10vw, 150px); padding-bottom: clamp(90px, 12vw, 170px); }
+.faq-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 10vw; margin-top: 80px; }
+.faq h2 { margin-bottom: 32px; }
+.faq h2 em { color: var(--cyan); }
+.faq-intro { max-width: 320px; color: #c9c7bd; font-size: 15px; line-height: 1.7; }
+.faq-list { border-top: 1px solid rgba(248, 243, 231, .35); }
+.faq-list details { border-bottom: 1px solid rgba(248, 243, 231, .35); padding: 0; }
+.faq-list summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; cursor: pointer; padding: 20px 0; list-style: none; font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(20px, 2.2vw, 30px); letter-spacing: -.05em; }
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after { content: '+'; color: var(--cyan); font: 28px 'Manrope', sans-serif; font-weight: 400; }
+.faq-list details[open] summary::after { content: '−'; }
+.faq-list details p { max-width: 700px; margin: 0 50px 21px 0; color: #c9c7bd; font-size: 14px; line-height: 1.7; }
 
 .contact { background: var(--orange); padding-top: clamp(80px, 10vw, 145px); padding-bottom: clamp(90px, 12vw, 180px); }
 .contact .section-label span { color: var(--paper); }
@@ -183,7 +199,7 @@ h2 { font-size: clamp(52px, 8.5vw, 130px); line-height: .9; letter-spacing: -.09
   .hero-image { min-height: 0; }
   .hero-image img { height: min(72vh, 500px); }
   .hero-foot { margin-top: 75px; }
-  .problem-grid, .platform-intro, .value-grid, .contact-grid { grid-template-columns: 1fr; gap: 50px; }
+  .problem-grid, .platform-intro, .value-grid, .faq-grid, .contact-grid { grid-template-columns: 1fr; gap: 50px; }
   .problem-grid { margin-top: 60px; }
   .channel-list { margin-top: 55px; }
   .work-heading { display: block; margin-bottom: 45px; }
@@ -195,6 +211,7 @@ h2 { font-size: clamp(52px, 8.5vw, 130px); line-height: .9; letter-spacing: -.09
   .product-preview-copy { padding-bottom: 15px; }
   .phone-shot { width: min(72%, 330px); margin-top: 25px; }
   .value-grid { margin-top: 60px; }
+  .faq-grid { margin-top: 60px; }
   .manifesto-card { min-height: 500px; }
   .manifesto-card > p { margin: 9vh 0; }
   .contact-grid { margin-top: 60px; }

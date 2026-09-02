@@ -3,12 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="XIP Events is an affordable digital operating layer for festivals: one private, live network for organisers, venue teams and visitors." />
-    <title>XIP Events — Who is this band? Where are my friends?</title>
+    <meta name="description" content="XIP Events is a festival communication and visitor coordination platform with live messaging, a private social network and footfall insight." />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#F8F3E7" />
+    <link rel="canonical" href="https://xipevents.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="XIP Events" />
+    <meta property="og:title" content="XIP Events | Festival communication and visitor coordination" />
+    <meta property="og:description" content="A private, live network for festival organisers, venue teams and visitors." />
+    <meta property="og:url" content="https://xipevents.com/" />
+    <meta property="og:image" content="https://xipevents.com/assets/hero-festival-scan.jpg" />
+    <meta property="og:image:alt" content="Festival visitor scanning a QR code to see who is performing" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="XIP Events | Festival communication and visitor coordination" />
+    <meta name="twitter:description" content="A private, live network for festival organisers, venue teams and visitors." />
+    <meta name="twitter:image" content="https://xipevents.com/assets/hero-festival-scan.jpg" />
+    <title>XIP Events | Festival communication and visitor coordination</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700&family=DM+Mono:wght@400;500&family=Manrope:wght@400&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preload" as="image" href="assets/hero-festival-scan.jpg" type="image/jpeg" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://xipevents.com/#organization",
+            "name": "XIP Events",
+            "url": "https://xipevents.com/"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://xipevents.com/#website",
+            "url": "https://xipevents.com/",
+            "name": "XIP Events",
+            "publisher": { "@id": "https://xipevents.com/#organization" }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://xipevents.com/#software",
+            "name": "XIP Events",
+            "url": "https://xipevents.com/",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "description": "A festival communication and visitor coordination platform with live messaging, a private social network and footfall insight.",
+            "publisher": { "@id": "https://xipevents.com/#organization" }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <header class="site-header" id="top">
@@ -24,6 +69,7 @@
         <a href="#problem">The problem</a>
         <a href="#platform">The solution</a>
         <a href="#value">Why it’s different</a>
+        <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
       </nav>
       <a class="header-cta" href="#platform">See the solution <span aria-hidden="true">↓</span></a>
@@ -33,7 +79,7 @@
       <section class="hero section-pad">
         <div class="hero-grid">
           <div class="hero-copy reveal">
-            <p class="eyebrow"><span class="eyebrow-dot"></span> Digital operating layer for festivals</p>
+            <p class="eyebrow"><span class="eyebrow-dot"></span> Festival communication and visitor coordination platform</p>
             <h1>Who is this band?<br /><em>Where are my friends?</em></h1>
             <p class="hero-intro">XIP Events combines an internal live messaging board, a private festival social network and visitor coordination tools in one affordable, modular platform.</p>
             <div class="hero-actions">
@@ -42,7 +88,7 @@
             </div>
           </div>
           <figure class="hero-art hero-image reveal reveal-delay">
-            <img src="assets/hero-festival-scan.jpg" alt="Festival visitor scanning a QR code to see who is performing" />
+            <img src="assets/hero-festival-scan.jpg" alt="Festival visitor scanning a QR code to see who is performing" width="760" height="796" fetchpriority="high" decoding="async" />
           </figure>
         </div>
         <div class="hero-foot reveal">
@@ -62,6 +108,7 @@
           <div class="problem-copy">
             <p>Social media, WhatsApp groups, printed signs, separate event apps, radio and staff coordination all do a piece of the job—but none of them see the whole site.</p>
             <p>That makes it harder to communicate quickly, coordinate venues and understand how visitors are moving through the event.</p>
+            <a class="inline-link" href="#platform">See the XIP Events solution →</a>
           </div>
         </div>
         <div class="channel-list reveal" aria-label="Festival communication channels">
@@ -76,7 +123,8 @@
         </div>
         <div class="platform-intro reveal">
           <h2>The tools<br /><span>in XIP Events.</span></h2>
-          <p>XIP Events brings the core communication and coordination functions of a festival into one private, live network.</p>
+          <p>XIP Events is a festival communication platform that brings the core communication and coordination functions of an event into one private, live network.</p>
+          <a class="inline-link" href="#value">Why XIP Events is different →</a>
         </div>
         <div class="audience-grid">
           <article class="audience-card audience-organisers feature-card reveal">
@@ -113,7 +161,7 @@
             <p>The visitor interface brings programme updates, venue context, friend groups and live feedback into the same place.</p>
           </div>
           <figure class="phone-shot">
-            <img src="assets/visitor-phone-ui-optimized.jpeg" alt="XIP Events visitor interface showing a live programme, venue activity, friend groups and photo sharing" />
+            <img src="assets/visitor-phone-ui-optimized.jpeg" alt="XIP Events visitor interface showing a live programme, venue activity, friend groups and photo sharing" width="420" height="879" loading="lazy" decoding="async" />
             <figcaption>Example visitor interface</figcaption>
           </figure>
         </div>
@@ -125,6 +173,7 @@
           <div>
             <h2>Affordable to start.<br /><em>Ready to scale.</em></h2>
             <p class="value-copy">XIP Events is designed initially for independent and cost-conscious festivals that cannot afford complex enterprise systems. Its modular architecture can scale to larger, multi-venue festivals.</p>
+            <a class="inline-link" href="#faq">Read common questions →</a>
           </div>
           <ul class="value-list">
             <li><span>01</span> One shared layer instead of separate channels</li>
@@ -144,8 +193,40 @@
         </div>
       </section>
 
+      <section class="faq section-pad" id="faq">
+        <div class="section-label"><span>04</span> Common questions</div>
+        <div class="faq-grid reveal">
+          <div>
+            <h2>About<br /><em>XIP Events.</em></h2>
+            <p class="faq-intro">A few straightforward answers about the festival communication platform.</p>
+          </div>
+          <div class="faq-list">
+            <details open>
+              <summary>What is XIP Events?</summary>
+              <p>XIP Events is a digital operating layer for festivals. It combines live messaging, a private festival social network and visitor coordination tools in one platform.</p>
+            </details>
+            <details>
+              <summary>Who is XIP Events for?</summary>
+              <p>It is designed for festival organisers, venue teams and visitors. Organisers publish updates and understand activity; venue teams share operational information; visitors find friends, join groups and discover activities.</p>
+            </details>
+            <details>
+              <summary>What communication does it replace?</summary>
+              <p>XIP Events brings together tasks that are often split across social media, WhatsApp groups, printed signs, separate event apps, radio and staff coordination.</p>
+            </details>
+            <details>
+              <summary>Can it support multi-venue festivals?</summary>
+              <p>Yes. XIP Events is designed initially for independent and cost-conscious festivals, with a modular architecture that can scale to larger, multi-venue festivals.</p>
+            </details>
+            <details>
+              <summary>What insight can organisers get?</summary>
+              <p>Organisers can gain insight into visitor footfall, engagement and underused areas, helping them understand how people are moving through the event.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
       <section class="contact section-pad" id="contact">
-        <div class="section-label"><span>04</span> Contact XIP Events</div>
+        <div class="section-label"><span>05</span> Contact XIP Events</div>
         <div class="contact-grid reveal">
           <div>
             <h2>Learn how XIP Events<br /><em>could fit your festival.</em></h2>
@@ -167,7 +248,7 @@
       <div class="footer-main">
         <a class="brand brand-footer" href="#top"><span class="brand-mark">XIP</span><span class="brand-type">EVENTS</span></a>
         <p>Digital operating layer<br />for festivals.</p>
-        <div class="footer-links"><a href="#problem">The problem</a><a href="#platform">The solution</a><a href="#contact">Contact us</a></div>
+        <div class="footer-links"><a href="#problem">The problem</a><a href="#platform">The solution</a><a href="#value">Why it’s different</a><a href="#faq">FAQ</a><a href="#contact">Contact us</a></div>
       </div>
       <div class="footer-bottom"><span>© <span id="year"></span> XIP Events</span><span>Affordable by design.</span><span class="mono">DIGITAL OPERATING LAYER</span></div>
     </footer>
