@@ -30,30 +30,11 @@ document.querySelector('#year').textContent = new Date().getFullYear();
 document.querySelector('#contact-form')?.addEventListener('submit', async (event) => {
   event.preventDefault();
   const form = event.currentTarget;
-  const button = form.querySelector('button[type="submit"]');
   const message = form.querySelector('.form-message');
-  const originalLabel = button.innerHTML;
+  const values = Object.fromEntries(new FormData(form));
+  const subject = encodeURIComponent(`XIP Events enquiry from ${values.name}`);
+  const body = encodeURIComponent(`Name: ${values.name}\nEmail: ${values.email}\n\n${values.message}`);
 
-  button.disabled = true;
-  button.textContent = 'Sending...';
-  message.textContent = '';
-
-  try {
-    const response = await fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(Object.fromEntries(new FormData(form))),
-    });
-    const result = await response.json();
-
-    if (!response.ok) throw new Error(result.error || 'Unable to send your message.');
-
-    message.textContent = 'Thanks — your message has been sent.';
-    form.reset();
-  } catch (error) {
-    message.textContent = error.message || 'Unable to send your message. Please try again.';
-  } finally {
-    button.disabled = false;
-    button.innerHTML = originalLabel;
-  }
+  message.textContent = 'Opening your email app with the enquiry ready to send.';
+  window.location.href = `mailto:hello@xipevents.com?subject=${subject}&body=${body}`;
 });
