@@ -49,7 +49,10 @@ h1 em, h2 em { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700;
 .button-light { background: var(--acid); color: var(--ink); }
 .text-link { border-bottom: 1px solid var(--ink); padding-bottom: 4px; font-size: 13px; }
 .text-link span { margin-left: 8px; }
-.hero-art { aspect-ratio: .92; max-width: 560px; width: 100%; margin-left: auto; background: var(--pink); position: relative; overflow: hidden; min-height: 420px; }
+.hero-art { max-width: 560px; width: 100%; margin: 0 0 0 auto; position: relative; }
+.hero-image { min-height: min(74vh, 610px); display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.hero-image img { display: block; width: auto; height: min(68vh, 560px); max-width: 100%; object-fit: contain; border: 1px solid var(--ink); box-shadow: 14px 14px 0 var(--cyan); }
+.hero-image figcaption { padding-top: 22px; font: 9px 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .07em; }
 .hero-art::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(100deg, transparent 0 35px, rgba(21, 21, 21, .09) 36px 37px); transform: translateX(-30%); }
 .art-orbit { position: absolute; border: 1px solid var(--ink); border-radius: 50%; transform: rotate(-24deg); }
 .orbit-one { width: 130%; height: 55%; top: 13%; left: -17%; }
@@ -176,7 +179,9 @@ h2 { font-size: clamp(52px, 8.5vw, 130px); line-height: .9; letter-spacing: -.09
   .menu-toggle { display: block; order: 3; }
   .hero { min-height: auto; padding-top: 75px; }
   .hero-grid { grid-template-columns: 1fr; gap: 65px; }
-  .hero-art { max-width: none; min-height: 350px; }
+  .hero-art { max-width: 88%; min-height: 0; margin-right: 14px; }
+  .hero-image { min-height: 0; }
+  .hero-image img { height: min(72vh, 500px); }
   .hero-foot { margin-top: 75px; }
   .problem-grid, .platform-intro, .value-grid, .contact-grid { grid-template-columns: 1fr; gap: 50px; }
   .problem-grid { margin-top: 60px; }
