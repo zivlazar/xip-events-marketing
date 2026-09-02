@@ -149,14 +149,14 @@
         <div class="contact-grid reveal">
           <div>
             <h2>Learn how XIP Events<br /><em>could fit your festival.</em></h2>
-            <p class="contact-copy">Contact us to discuss your festival, the teams involved and the communication or coordination tools you need.</p>
-            <a class="email-link" href="mailto:hello@xipevents.com">hello@xipevents.com <span aria-hidden="true">↗</span></a>
+            <p class="contact-copy">Use the form to tell us about your festival, the teams involved and the communication or coordination tools you need.</p>
           </div>
           <form class="contact-form" id="contact-form">
             <label>What’s your name?<input type="text" name="name" autocomplete="name" placeholder="Your name" required /></label>
             <label>Where can we reach you?<input type="email" name="email" autocomplete="email" placeholder="you@festival.com" required /></label>
             <label>Tell us about your festival<textarea name="message" rows="3" placeholder="Your requirements..." required></textarea></label>
-            <button class="button button-light" type="submit">Send the brief <span aria-hidden="true">↗</span></button>
+            <label class="honeypot" aria-hidden="true">Company<input type="text" name="company" tabindex="-1" autocomplete="off" /></label>
+            <button class="button button-light" type="submit">Submit enquiry <span aria-hidden="true">↗</span></button>
             <p class="form-message" role="status" aria-live="polite"></p>
           </form>
         </div>
@@ -167,7 +167,7 @@
       <div class="footer-main">
         <a class="brand brand-footer" href="#top"><span class="brand-mark">XIP</span><span class="brand-type">EVENTS</span></a>
         <p>Digital operating layer<br />for festivals.</p>
-        <div class="footer-links"><a href="#problem">The problem</a><a href="#platform">The solution</a><a href="mailto:hello@xipevents.com">Email us</a></div>
+        <div class="footer-links"><a href="#problem">The problem</a><a href="#platform">The solution</a><a href="#contact">Contact us</a></div>
       </div>
       <div class="footer-bottom"><span>© <span id="year"></span> XIP Events</span><span>Affordable by design.</span><span class="mono">DIGITAL OPERATING LAYER</span></div>
     </footer>

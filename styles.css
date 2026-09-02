@@ -156,6 +156,7 @@ h2 { font-size: clamp(52px, 8.5vw, 130px); line-height: .9; letter-spacing: -.09
 .contact-form input::placeholder, .contact-form textarea::placeholder { color: rgba(28, 30, 26, .58); }
 .contact-form .button { margin-top: 25px; }
 .form-message { min-height: 25px; margin: 14px 0 0; font-size: 12px; }
+.honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
 
 .site-footer { background: var(--ink); color: var(--paper); padding-top: 53px; padding-bottom: 28px; }
 .footer-main { display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: start; padding-bottom: 80px; }

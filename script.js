@@ -27,9 +27,33 @@ revealItems.forEach((item) => revealObserver.observe(item));
 
 document.querySelector('#year').textContent = new Date().getFullYear();
 
-document.querySelector('#contact-form')?.addEventListener('submit', (event) => {
+document.querySelector('#contact-form')?.addEventListener('submit', async (event) => {
   event.preventDefault();
-  const message = event.currentTarget.querySelector('.form-message');
-  message.textContent = 'Thanks — we’ll be in touch soon.';
-  event.currentTarget.reset();
+  const form = event.currentTarget;
+  const button = form.querySelector('button[type="submit"]');
+  const message = form.querySelector('.form-message');
+  const originalLabel = button.innerHTML;
+
+  button.disabled = true;
+  button.textContent = 'Sending...';
+  message.textContent = '';
+
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(Object.fromEntries(new FormData(form))),
+    });
+    const result = await response.json();
+
+    if (!response.ok) throw new Error(result.error || 'Unable to send your message.');
+
+    message.textContent = 'Thanks — your message has been sent.';
+    form.reset();
+  } catch (error) {
+    message.textContent = error.message || 'Unable to send your message. Please try again.';
+  } finally {
+    button.disabled = false;
+    button.innerHTML = originalLabel;
+  }
 });
