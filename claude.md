@@ -24,7 +24,7 @@ The hero title is:
 
 > Who is this band? Where are my friends?
 
-The solution feature cards cover live messaging, private social networking, visitor coordination, footfall and engagement, festival maps, venue menus and orders, time-based venue promotions, private invite-only events, brand-awareness promotions, and modular platform capability.
+The visible solution feature cards cover live messaging, private social networking, visitor coordination, footfall and engagement, line-ups and visitor recommendations, time-based venue promotions, private invite-only events, and brand-awareness promotions.
 
 ## Brand system
 
@@ -74,7 +74,8 @@ The solution feature cards cover live messaging, private social networking, visi
 
 - The problem section keeps the fragmented communication channels as plain labels without outlined boxes.
 - Avoid repeating the independent-festival and multi-venue positioning sentence in the platform cards.
-- The platform feature list should make the product capabilities visible: map venues, manage venue menus and orders, publish time-based discounts, create invite-only events, and run relevant brand-awareness promotions.
+- The platform feature cards should not show numeric prefixes.
+- The platform feature list should make the product capabilities visible: live updates, visitor friend-finding, activity discovery, line-ups and visitor recommendations, time-based discounts, invite-only events, and relevant brand-awareness promotions.
 
 ## SEO decisions
 

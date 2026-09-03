@@ -116,10 +116,7 @@ h2 { font-size: clamp(52px, 8.5vw, 130px); line-height: .9; letter-spacing: -.09
 .audience-visitors { background: var(--blue); color: var(--paper); }
 .signal-card { background: var(--ink); color: var(--paper); }
 .signal-card .card-index { color: var(--cyan); }
-.modular-card { background: var(--ink); color: var(--paper); }
-.modular-card .card-index { color: var(--cyan); }
-.feature-map { background: var(--cyan); }
-.feature-orders { background: var(--orange); }
+.feature-lineups { background: var(--orange); }
 .feature-promotions { background: var(--pink); }
 .feature-invites { background: var(--blue); color: var(--paper); }
 .feature-brand { background: var(--acid); }
