@@ -54,7 +54,7 @@ document.querySelector('#contact-form')?.addEventListener('submit', async (event
     form.reset();
     message.textContent = 'Thanks — your message has been sent.';
   } catch (error) {
-    message.textContent = 'Something went wrong. Please try again in a moment.';
+    message.innerHTML = 'Something went wrong. Please try again in a moment.<br />Alternatively, email us at hello@XIPevents.com';
   } finally {
     submitButton.disabled = false;
     submitButton.removeAttribute('aria-busy');
