@@ -31,6 +31,7 @@ button, input, textarea { font: inherit; }
 .header-cta:hover, .button:hover { transform: translateY(-3px); }
 .header-cta span, .button span, .email-link span { display: inline-block; font-size: 18px; margin-left: 8px; }
 body.is-scrolling-down .header-cta span { animation: contact-arrow-drop .65s ease-in-out infinite; }
+.button.is-arrow-animating span { animation: contact-arrow-drop .65s ease-in-out infinite; }
 .menu-toggle { display: none; background: none; border: 0; padding: 7px; cursor: pointer; }
 .menu-toggle span:not(.sr-only) { display: block; width: 24px; height: 2px; background: var(--ink); margin: 5px 0; }
 
@@ -243,4 +244,5 @@ h2 { font-size: clamp(52px, 8.5vw, 130px); line-height: .9; letter-spacing: -.09
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
   body.is-scrolling-down .header-cta span { animation: none; }
+  .button.is-arrow-animating span { animation: none; }
 }

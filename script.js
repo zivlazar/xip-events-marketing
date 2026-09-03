@@ -58,6 +58,13 @@ document.querySelector('#contact-form')?.addEventListener('submit', async (event
   const submitButton = form.querySelector('button[type="submit"]');
   const values = Object.fromEntries(new FormData(form));
 
+  submitButton.classList.remove('is-arrow-animating');
+  void submitButton.offsetWidth;
+  submitButton.classList.add('is-arrow-animating');
+  setTimeout(() => {
+    submitButton.classList.remove('is-arrow-animating');
+  }, 2000);
+
   submitButton.disabled = true;
   submitButton.setAttribute('aria-busy', 'true');
   message.textContent = 'Sending…';
