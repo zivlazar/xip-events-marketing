@@ -27,6 +27,28 @@ revealItems.forEach((item) => revealObserver.observe(item));
 
 document.querySelector('#year').textContent = new Date().getFullYear();
 
+let lastScrollY = window.scrollY;
+let scrollArrowTimer;
+
+window.addEventListener('scroll', () => {
+  const currentScrollY = Math.max(window.scrollY, 0);
+  const isScrollingDown = currentScrollY > lastScrollY + 4;
+
+  if (isScrollingDown) {
+    document.body.classList.add('is-scrolling-down');
+    clearTimeout(scrollArrowTimer);
+    scrollArrowTimer = setTimeout(() => {
+      document.body.classList.remove('is-scrolling-down');
+    }, 600);
+  }
+
+  if (currentScrollY < lastScrollY - 4) {
+    document.body.classList.remove('is-scrolling-down');
+  }
+
+  lastScrollY = currentScrollY;
+}, { passive: true });
+
 const contactEndpoint = 'https://api.xipevents.com/api/contact';
 
 document.querySelector('#contact-form')?.addEventListener('submit', async (event) => {
