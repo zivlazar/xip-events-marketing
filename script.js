@@ -27,29 +27,36 @@ revealItems.forEach((item) => revealObserver.observe(item));
 
 document.querySelector('#year').textContent = new Date().getFullYear();
 
-document.querySelector('#contact-form')?.addEventListener('submit', (event) => {
+const contactEndpoint = 'https://api.xipevents.com/api/contact';
+
+document.querySelector('#contact-form')?.addEventListener('submit', async (event) => {
   event.preventDefault();
   const form = event.currentTarget;
   const message = form.querySelector('.form-message');
+  const submitButton = form.querySelector('button[type="submit"]');
   const values = Object.fromEntries(new FormData(form));
-  const button = form.querySelector('button[type="submit"]');
-  button.disabled = true;
+
+  submitButton.disabled = true;
+  submitButton.setAttribute('aria-busy', 'true');
   message.textContent = 'Sending…';
 
-  fetch('https://api.xipevents.com/api/contact', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(values),
-  })
-    .then((response) => {
-      if (!response.ok) throw new Error('Contact request failed');
-      form.reset();
-      message.textContent = 'Thanks — your message has been sent.';
-    })
-    .catch(() => {
-      message.textContent = 'We could not send your message. Please try again shortly.';
-    })
-    .finally(() => {
-      button.disabled = false;
+  try {
+    const response = await fetch(contactEndpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(values),
     });
+
+    if (!response.ok) {
+      throw new Error('Contact request failed');
+    }
+
+    form.reset();
+    message.textContent = 'Thanks — your message has been sent.';
+  } catch (error) {
+    message.textContent = 'Something went wrong. Please try again in a moment.';
+  } finally {
+    submitButton.disabled = false;
+    submitButton.removeAttribute('aria-busy');
+  }
 });

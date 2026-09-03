@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: xip-events-contact
+    runtime: node
+    plan: free
+    buildCommand: npm --prefix server install
+    startCommand: node server/index.js
+    healthCheckPath: /health
+    envVars:
+      - key: RESEND_API_KEY
+        sync: false
+      - key: RESEND_FROM_EMAIL
+        sync: false
+      - key: ALLOWED_ORIGINS
+        value: https://xipevents.com,https://www.xipevents.com

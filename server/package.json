@@ -1,0 +1,12 @@
+{
+  "name": "xip-events-contact-server",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Standalone contact endpoint for the XIP Events marketing website",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}

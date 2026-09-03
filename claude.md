@@ -1,6 +1,6 @@
 # XIP Events project decisions
 
-Last updated: 2 September 2026
+Last updated: 3 September 2026
 
 ## Product positioning
 
@@ -58,13 +58,15 @@ The solution feature cards cover live messaging, private social networking, visi
 
 ## Contact form
 
-- The static GitHub Pages site posts to `https://api.xipevents.com/api/contact`.
-- The endpoint is hosted by the existing Vercel Node runtime and sends through Resend.
-- Resend sends from the verified `send.xipevents.com` subdomain to `hello@xipevents.com`.
+- The GitHub Pages frontend submits the form as JSON to the separate Node contact server at `https://api.xipevents.com/api/contact`.
+- The contact server sends through Resend to `hello@xipevents.com`; the Resend API key and recipient address remain server-side.
+- The server must be deployed separately to a Node-compatible host with `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, and `ALLOWED_ORIGINS` environment variables.
+- `render.yaml` is the deployment configuration for the separate contact server; the site must not be moved back to the unrelated Vercel project.
+- `RESEND_FROM_EMAIL` must use a sender domain verified in Resend.
 - The email address is not displayed in visible page content.
 - The form fields are: name (required), organisation or festival name (required), email (required), phone number (optional), and message (required).
 - The button label is `Send`.
-- A fallback `Open email app` link appears if the initial mail client launch does not work.
+- The server validates input, applies a basic in-memory rate limit, restricts browser origins, and supports a honeypot field for basic spam filtering.
 
 ## SEO decisions
 
@@ -77,7 +79,7 @@ The solution feature cards cover live messaging, private social networking, visi
 
 ## Working conventions
 
-- Keep the site static and dependency-free unless a deliberate hosting decision changes.
+- Keep the public website static and dependency-free; the contact server is a deliberately separate Node service.
 - Preserve the one-page structure unless there is a clear SEO or product reason to add separate pages.
 - Keep future copy factual, specific, and centred on what the product does.
-- Run `node --check script.js` and `git diff --check` before committing.
+- Run `node --check script.js`, `node --check server/index.js`, and `git diff --check` before committing.
