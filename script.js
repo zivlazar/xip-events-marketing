@@ -32,22 +32,24 @@ document.querySelector('#contact-form')?.addEventListener('submit', (event) => {
   const form = event.currentTarget;
   const message = form.querySelector('.form-message');
   const values = Object.fromEntries(new FormData(form));
-  const subject = encodeURIComponent(`XIP Events enquiry from ${values.organisation}`);
-  const phone = values.phone ? `\nPhone: ${values.phone}` : '';
-  const body = encodeURIComponent(`Name: ${values.name}\nOrganisation or festival: ${values.organisation}\nEmail: ${values.email}${phone}\n\n${values.message}`);
-  const mailto = `mailto:hello@xipevents.com?subject=${subject}&body=${body}`;
-  const fallbackLink = document.createElement('a');
+  const button = form.querySelector('button[type="submit"]');
+  button.disabled = true;
+  message.textContent = 'Sending…';
 
-  fallbackLink.href = mailto;
-  fallbackLink.textContent = 'Open email app';
-  fallbackLink.className = 'form-fallback';
-  fallbackLink.target = '_blank';
-  fallbackLink.rel = 'noopener';
-
-  message.replaceChildren(
-    document.createTextNode('If your email app did not open, '),
-    fallbackLink,
-    document.createTextNode('.'),
-  );
-  window.location.href = mailto;
+  fetch('https://api.xipevents.com/api/contact', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(values),
+  })
+    .then((response) => {
+      if (!response.ok) throw new Error('Contact request failed');
+      form.reset();
+      message.textContent = 'Thanks — your message has been sent.';
+    })
+    .catch(() => {
+      message.textContent = 'We could not send your message. Please try again shortly.';
+    })
+    .finally(() => {
+      button.disabled = false;
+    });
 });

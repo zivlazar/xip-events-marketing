@@ -14,4 +14,4 @@ The site has no build step and no dependency on the separate XIP Events project.
 
 ## Contact form
 
-The static contact form opens the visitor’s default email app with a pre-filled enquiry addressed to `hello@xipevents.com`. A backend email service is not required, but the visitor must have an email app configured on their device.
+The static contact form posts to `https://api.xipevents.com/api/contact`. The endpoint runs in the XIP Vercel Node runtime and sends enquiries through Resend from the verified `send.xipevents.com` subdomain.

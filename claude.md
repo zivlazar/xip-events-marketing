@@ -58,10 +58,10 @@ The solution feature cards cover live messaging, private social networking, visi
 
 ## Contact form
 
-- Do not use Resend or a server-side API for this GitHub Pages site.
-- The form uses a `mailto:` URL to prepare an email addressed to `hello@xipevents.com`.
+- The static GitHub Pages site posts to `https://api.xipevents.com/api/contact`.
+- The endpoint is hosted by the existing Vercel Node runtime and sends through Resend.
+- Resend sends from the verified `send.xipevents.com` subdomain to `hello@xipevents.com`.
 - The email address is not displayed in visible page content.
-- The visitor must have an email app configured and must click Send themselves.
 - The form fields are: name (required), organisation or festival name (required), email (required), phone number (optional), and message (required).
 - The button label is `Send`.
 - A fallback `Open email app` link appears if the initial mail client launch does not work.
