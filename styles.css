@@ -30,18 +30,8 @@ button, input, textarea { font: inherit; }
 .header-cta { position: fixed; top: 24px; right: clamp(24px, 6vw, 96px); z-index: 20; background: var(--acid); padding: 12px 17px; transition: transform .2s ease; }
 .header-cta:hover, .button:hover { transform: translateY(-3px); }
 .header-cta span, .button span, .email-link span { display: inline-block; font-size: 18px; margin-left: 8px; }
-body.is-scrolling-down .header-cta span { animation: contact-arrow-drop .65s ease-in-out infinite; }
-.contact-form .button.is-arrow-animating { transform: none; }
-.button.is-arrow-animating span { animation: contact-arrow-drop .65s ease-in-out infinite; }
 .menu-toggle { display: none; background: none; border: 0; padding: 7px; cursor: pointer; }
 .menu-toggle span:not(.sr-only) { display: block; width: 24px; height: 2px; background: var(--ink); margin: 5px 0; }
-
-@keyframes contact-arrow-drop {
-  0% { color: var(--ink); transform: translateY(-2px); }
-  35% { color: var(--blue); transform: translateY(4px); }
-  70% { color: var(--pink); transform: translateY(7px); }
-  100% { color: var(--ink); transform: translateY(-2px); }
-}
 
 .hero { min-height: calc(100vh - 94px); padding-top: clamp(70px, 10vw, 140px); padding-bottom: 40px; display: flex; flex-direction: column; justify-content: space-between; }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(340px, .9fr); align-items: start; gap: clamp(50px, 9vw, 160px); max-width: 1360px; width: 100%; margin: 0 auto; }
@@ -244,6 +234,4 @@ h2 { font-size: clamp(52px, 8.5vw, 130px); line-height: .9; letter-spacing: -.09
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
-  body.is-scrolling-down .header-cta span { animation: none; }
-  .button.is-arrow-animating span { animation: none; }
 }
