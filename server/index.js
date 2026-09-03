@@ -99,7 +99,7 @@ function isRateLimited(request) {
 function buildEmail({ name, organisation, email, phone, message }) {
   const phoneLine = phone ? `<p><strong>Phone:</strong> ${escapeHtml(phone)}</p>` : '';
   const textPhoneLine = phone ? `\nPhone: ${phone}` : '';
-  const subject = `XIP Events enquiry from ${organisation.replace(/[\r\n]/g, ' ')}`;
+    const subject = 'XIP Events query form';
   const text = [
     `Name: ${name}`,
     `Organisation or festival: ${organisation}`,
