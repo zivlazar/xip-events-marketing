@@ -22,7 +22,7 @@ The server requires Node.js 18 or newer because it uses the built-in `fetch` API
 
 ```bash
 RESEND_API_KEY=re_xxxxxxxxx \
-RESEND_FROM_EMAIL='XIP Events <notifications@xipevents.com>' \
+RESEND_FROM_EMAIL='XIP Events <notifications@send.xipevents.com>' \
 ALLOWED_ORIGINS='http://localhost:8000' \
 node server/index.js
 ```
