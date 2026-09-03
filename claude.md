@@ -46,8 +46,10 @@ The solution feature cards cover live messaging, private social networking, visi
 - GitHub Pages publishes from the `main` branch and root directory.
 - `CNAME` contains `xipevents.com`.
 - The site is intended to be hosted on GitHub Pages, independently from the other XIP Events project.
+- The separate contact server is intended to run on Render’s free web service, independently from the website and from the unrelated Vercel project.
 - Spaceship remains the DNS provider. The nameservers are `launch1.spaceship.net` and `launch2.spaceship.net`.
 - Required GitHub Pages DNS records are four apex A records for GitHub Pages and a `www` CNAME to `zivlazar.github.io`.
+- After the Render service is deployed, the `api` DNS record must point to its Render hostname.
 - The canonical, sitemap, and social metadata currently assume `https://xipevents.com/`. Update these if the public domain changes.
 
 ## Images
