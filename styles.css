@@ -24,10 +24,10 @@ button, input, textarea { font: inherit; }
 .brand { display: inline-flex; align-items: center; gap: 13px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; }
 .brand-mark { font-size: 30px; line-height: 1; letter-spacing: -.12em; }
 .brand-type { font-size: 10px; border-left: 1px solid var(--ink); padding-left: 13px; letter-spacing: .18em; }
-.site-nav { display: flex; gap: 38px; margin-left: auto; }
+.site-nav { display: flex; gap: 38px; margin-left: auto; margin-right: 142px; }
 .site-nav a, .header-cta, .footer-links a { font-size: 13px; }
 .site-nav a:hover, .footer-links a:hover { color: var(--blue); }
-.header-cta { background: var(--acid); padding: 12px 17px; transition: transform .2s ease; }
+.header-cta { position: fixed; top: 24px; right: clamp(24px, 6vw, 96px); z-index: 20; background: var(--acid); padding: 12px 17px; transition: transform .2s ease; }
 .header-cta:hover, .button:hover { transform: translateY(-3px); }
 .header-cta span, .button span, .email-link span { font-size: 18px; margin-left: 8px; }
 .menu-toggle { display: none; background: none; border: 0; padding: 7px; cursor: pointer; }
