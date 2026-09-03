@@ -49,6 +49,19 @@ window.addEventListener('scroll', () => {
   lastScrollY = currentScrollY;
 }, { passive: true });
 
+const contactSubmitButton = document.querySelector('#contact-form button[type="submit"]');
+let submitArrowTimer;
+
+contactSubmitButton?.addEventListener('click', () => {
+  contactSubmitButton.classList.remove('is-arrow-animating');
+  void contactSubmitButton.offsetWidth;
+  contactSubmitButton.classList.add('is-arrow-animating');
+  clearTimeout(submitArrowTimer);
+  submitArrowTimer = setTimeout(() => {
+    contactSubmitButton.classList.remove('is-arrow-animating');
+  }, 2000);
+});
+
 const contactEndpoint = 'https://api.xipevents.com/api/contact';
 
 document.querySelector('#contact-form')?.addEventListener('submit', async (event) => {
@@ -57,13 +70,6 @@ document.querySelector('#contact-form')?.addEventListener('submit', async (event
   const message = form.querySelector('.form-message');
   const submitButton = form.querySelector('button[type="submit"]');
   const values = Object.fromEntries(new FormData(form));
-
-  submitButton.classList.remove('is-arrow-animating');
-  void submitButton.offsetWidth;
-  submitButton.classList.add('is-arrow-animating');
-  setTimeout(() => {
-    submitButton.classList.remove('is-arrow-animating');
-  }, 2000);
 
   submitButton.disabled = true;
   submitButton.setAttribute('aria-busy', 'true');
