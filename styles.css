@@ -39,6 +39,7 @@ h1, h2, h3, p { margin-top: 0; }
 h1, h2, h3 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; }
 h1 { font-size: clamp(65px, 10.5vw, 156px); letter-spacing: -.09em; line-height: .88; margin: 0 0 40px; }
 h1 em, h2 em { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-style: normal; letter-spacing: -.08em; }
+.hero h1 em { color: var(--red); }
 .hero-intro { max-width: 460px; font-size: clamp(16px, 1.5vw, 20px); line-height: 1.5; margin-bottom: 35px; }
 .hero-actions { display: flex; align-items: center; gap: 27px; }
 .button { display: inline-flex; align-items: center; border: 0; padding: 15px 20px; cursor: pointer; font-size: 13px; font-weight: 400; transition: transform .2s ease, background .2s ease; }
