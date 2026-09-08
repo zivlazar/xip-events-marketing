@@ -90,6 +90,8 @@ h2 { font-size: clamp(52px, 8.5vw, 130px); line-height: .9; letter-spacing: -.09
 .problem-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(260px, .8fr); gap: 8vw; margin-top: 80px; align-items: end; }
 .problem-grid h2 { margin-bottom: 0; }
 .problem-copy { color: #c9c7bd; font-size: 16px; line-height: 1.7; }
+.problem-image { width: min(100%, 560px); margin: 0 0 42px auto; }
+.problem-image img { display: block; width: 100%; height: auto; }
 .problem-copy p:last-child { margin-bottom: 0; }
 .inline-link { display: inline-block; margin-top: 18px; border-bottom: 1px solid currentColor; color: var(--cyan); font-size: 13px; }
 .channel-list { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 90px; }
